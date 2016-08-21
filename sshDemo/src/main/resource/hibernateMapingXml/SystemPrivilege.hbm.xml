@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-20 13:58:54 by Hibernate Tools 4.3.4.Final -->
+<hibernate-mapping>
+    <class name="com.likai.sshDemo.entity.SystemPrivilege" table="system_privilege" catalog="test" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="systemPrivilege" class="com.likai.sshDemo.entity.SystemPrivilege" fetch="select">
+            <column name="parent_id" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="20">
+                <comment>&#189;&#199;&#201;&#171;</comment>
+            </column>
+        </property>
+        <property name="url" type="string">
+            <column name="url">
+                <comment>&#210;&#187;&#184;&#246;url</comment>
+            </column>
+        </property>
+        <property name="icon" type="string">
+            <column name="icon" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="sort">
+                <comment>&#178;&#203;&#181;&#165;&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>0&#177;&#237;&#202;&#190;&#181;&#218;&#210;&#187;&#188;&#182;&#192;&#224;&#205;&#198;</comment>
+            </column>
+        </property>
+        <set name="systemPrivileges" table="system_privilege" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="parent_id" />
+            </key>
+            <one-to-many class="com.likai.sshDemo.entity.SystemPrivilege" />
+        </set>
+        <set name="systemRolePrivileges" table="system_role_privilege" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="privilege" />
+            </key>
+            <one-to-many class="com.likai.sshDemo.entity.SystemRolePrivilege" />
+        </set>
+    </class>
+</hibernate-mapping>

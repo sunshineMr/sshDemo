@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="test" match-name="region"/>
+  <table-filter match-catalog="test" match-name="school"/>
+  <table-filter match-catalog="test" match-name="system_privilege"/>
+  <table-filter match-catalog="test" match-name="system_role"/>
+  <table-filter match-catalog="test" match-name="system_role_privilege"/>
+  <table-filter match-catalog="test" match-name="system_user"/>
+  <table-filter match-catalog="test" match-name="system_user_role"/>
+  <table-filter match-catalog="test" match-name="user"/>
+</hibernate-reverse-engineering>

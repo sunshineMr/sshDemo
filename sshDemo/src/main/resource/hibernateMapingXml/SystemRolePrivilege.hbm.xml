@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-20 13:58:54 by Hibernate Tools 4.3.4.Final -->
+<hibernate-mapping>
+    <class name="com.likai.sshDemo.entity.SystemRolePrivilege" table="system_role_privilege" catalog="test" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="systemPrivilege" class="com.likai.sshDemo.entity.SystemPrivilege" fetch="select">
+            <column name="privilege" />
+        </many-to-one>
+        <many-to-one name="systemRole" class="com.likai.sshDemo.entity.SystemRole" fetch="select">
+            <column name="system_role" />
+        </many-to-one>
+        <property name="isUse" type="java.lang.Integer">
+            <column name="is_use" />
+        </property>
+    </class>
+</hibernate-mapping>

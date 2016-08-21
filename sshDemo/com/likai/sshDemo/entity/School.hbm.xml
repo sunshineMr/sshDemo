@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-20 13:58:54 by Hibernate Tools 4.3.4.Final -->
+<hibernate-mapping>
+    <class name="com.likai.sshDemo.entity.School" table="school" catalog="test" optimistic-lock="version">
+        <id name="schoolId" type="java.lang.Integer">
+            <column name="school_id" />
+            <generator class="identity" />
+        </id>
+        <property name="schoolName" type="string">
+            <column name="school_name" length="100" not-null="true" />
+        </property>
+        <property name="province" type="int">
+            <column name="province" not-null="true">
+                <comment>&#203;&#249;&#202;&#244;&#202;&#161;&#183;&#221;</comment>
+            </column>
+        </property>
+        <property name="city" type="int">
+            <column name="city" not-null="true">
+                <comment>&#203;&#249;&#202;&#244;&#179;&#199;&#202;&#208;</comment>
+            </column>
+        </property>
+        <property name="area" type="int">
+            <column name="area" not-null="true">
+                <comment>&#203;&#249;&#202;&#244;&#199;&#248;&#207;&#216;</comment>
+            </column>
+        </property>
+        <property name="gradePeriod" type="string">
+            <column name="grade_period" length="16" not-null="true">
+                <comment>&#196;&#234;&#188;&#182;&#182;&#206;&#163;&#168;&#182;&#224;&#209;&#161;&#163;&#172;&#182;&#186;&#186;&#197;&#183;&#214;&#184;&#238;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true">
+                <comment>&#209;&#167;&#208;&#163;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

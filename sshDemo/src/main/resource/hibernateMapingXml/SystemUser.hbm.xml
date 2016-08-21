@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-20 13:58:54 by Hibernate Tools 4.3.4.Final -->
+<hibernate-mapping>
+    <class name="com.likai.sshDemo.entity.SystemUser" table="system_user" catalog="test" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="loginName" type="string">
+            <column name="login_name" length="120" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="120" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="80" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="5">
+                <comment>&#208;&#212;&#177;&#240;</comment>
+            </column>
+        </property>
+        <property name="birthday" type="date">
+            <column name="birthday" length="10" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="40" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#185;&#220;&#192;&#237;&#212;&#177;&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="isUse" type="java.lang.Integer">
+            <column name="is_use" />
+        </property>
+        <set name="systemUserRoles" table="system_user_role" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="system_user" />
+            </key>
+            <one-to-many class="com.likai.sshDemo.entity.SystemUserRole" />
+        </set>
+    </class>
+</hibernate-mapping>
